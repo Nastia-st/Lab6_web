@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="uk">
+    <head>
+        <title>Практична робота 6</title>
+        <link rel="stylesheet" href="lab6_2.css">
+    </head>
+    <body>
+        <h2>Таблиця обліку товарів</h2>
+        <script>
+            let products = [
+                ["T01", "Мишка", 350, 4],
+                ["T02", "Клавіатура", 750, 2],
+                ["T03", "Монітор", 5200, 1],
+                ["T04", "Навушники", 1200, 3],
+                ["T05", "Мікрофон", 1500, 5]
+            ];
+            let totalSum = 0;
+    
+            document.write("<table border='1' cellspacing='0' cellpadding='5' align='center'>");
+            document.write("<tr>");
+            document.write("<th>Код</th>");
+            document.write("<th>Найменування</th>");
+            document.write("<th>Ціна за од.</th>");
+            document.write("<th>Кількість</th>");
+            document.write("<th>Сума</th>");
+            document.write("</tr>");
+
+            for (let i = 0; i < products.length; i++) {
+                let code = products[i][0];
+                let name = products[i][1];
+                let price = products[i][2];
+                let quantity = products[i][3];
+                
+                let itemSum = price * quantity;
+                totalSum += itemSum;
+    
+                document.write("<tr>");
+                document.write("<td>" + code + "</td>");
+                document.write("<td>" + name + "</td>");
+                document.write("<td>" + price + "</td>");
+                document.write("<td>" + quantity + "</td>");
+                document.write("<td>" + itemSum + "</td>");
+                document.write("</tr>");
+            }
+            document.write("<tr class='total-row'>");
+            document.write("<td colspan='4' align='right'>Всього до сплати:</td>");
+            document.write("<td>" + totalSum + " грн</td>");
+            document.write("</tr>");
+            document.write("</table>");
+        </script>
+    </body>
+</html>

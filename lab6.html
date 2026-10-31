@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="uk">
+    <head>
+        <title>Практична робота 6</title>
+    </head>
+    <body>
+        <h2>Результат виконання завдання </h2>
+        <script>
+        let userInput = prompt("Будь ласка, вкажіть ваш вік:");
+        if (userInput === null) {
+            alert("Ви скасували введення даних.");
+            document.write("<p style='color: red;'>Введення скасовано користувачем.</p>");
+        } else {
+            let age = Number(userInput.trim());
+            if (userInput.trim() === "" || isNaN(age) || age < 0) {
+                alert("Помилка! Будь ласка, введіть коректне додатне число.");
+                document.write("<p style='color: red;'>Помилка: введено некоректні дані.</p>");
+            } else {
+                let category = "";
+                if (age >= 0 && age <= 11) {
+                    category = "дитина";
+                } else if (age >= 12 && age <= 18) {
+                    category = "підліток";
+                } else {
+                    category = "дорослий";
+                }
+                let message = `Ваш вік: ${age}. Ви є: ${category}.`;
+                alert(message);
+                document.write(`<p><strong>Результат:</strong> ${message}</p>`);
+            }
+        }
+        </script>
+    </body>
+</html>
